@@ -3,13 +3,13 @@ package bank.domain;
 import java.io.Serializable;
 
 public class Account implements Serializable {
-    private int accountNumber;          // 계좌번호
+    private long accountNumber;          // 계좌번호
     private String ownerName;           // 예금주
     private double balance;             // 계좌 잔액
     private AccountType accountType;    // 계좌 유형(SAVINGS, CHECKING)
 
     /* 계좌 생성 시 필요한 정보 */
-    public Account(int accountNumber, String ownerName, double initialDeposit, AccountType accountType) {
+    public Account(long accountNumber, String ownerName, double initialDeposit, AccountType accountType) {
         this.accountNumber = accountNumber;
         this.ownerName = ownerName;
         this.balance = initialDeposit;      // 계좌를 만들 때 처음 넣는 돈
@@ -40,7 +40,7 @@ public class Account implements Serializable {
     }
 
     /* Getter 메소드 */
-    public int getAccountNumber() {
+    public long getAccountNumber() {
         return accountNumber;
     }
 
