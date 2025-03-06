@@ -59,10 +59,10 @@ public class Account implements Serializable {
     @Override
     public String toString() {
         return "Account{" +
-                "accountNumber=" + accountNumber +
-                ", ownerName='" + ownerName + '\'' +
-                ", balance=" + balance +
-                ", accountType=" + accountType +
+                "계좌번호 =" + accountNumber +
+                ", 예금주 ='" + ownerName + '\'' +
+                ", 계좌 잔액 =" + balance +
+                ", 계좌 유형 =" + accountType +
                 '}';
     }
 }
