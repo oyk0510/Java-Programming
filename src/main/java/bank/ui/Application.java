@@ -30,6 +30,7 @@ public class Application {
             System.out.println("2. 계좌 개설");
             System.out.println("3. 입금");
             System.out.println("4. 출금");
+            System.out.println("5. 계좌 삭제");
             System.out.println("0. 프로그램 종료");
             System.out.print("원하시는 서비스 번호를 입력하세요 : ");
 
@@ -42,6 +43,7 @@ public class Application {
                     case 2 -> openAccount();
                     case 3 -> deposit();
                     case 4 -> withdraw();
+                    case 5 -> deleteAccount();
                     case 0 -> {
                         System.out.println("프로그램을 종료합니다.");
                         return;
@@ -54,6 +56,7 @@ public class Application {
             }
         }
     }
+
 
     private void showAllAcounts() {
         List<Account> accounts = accountService.getAllAccounts();
@@ -109,6 +112,15 @@ public class Application {
 
         accountService.withdraw(accountNumber, amount);
         System.out.println("출금 완료!");
+    }
+
+    private void deleteAccount() {
+        System.out.print("삭제할 계좌번호 입력 : ");
+        long accountNumber = sc.nextLong();
+        sc.nextLine();
+
+        accountService.deleteAccount(accountNumber);
+        System.out.println("계좌 삭제 완료!");
     }
 
     public static void main(String[] args) {

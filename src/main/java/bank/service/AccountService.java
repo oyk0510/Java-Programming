@@ -54,7 +54,7 @@ public class AccountService {
         accountRepository.updateAccount(account);
     }
 
-    public void delteAccount(long accountNumber) {
+    public void deleteAccount(long accountNumber) {
         Account account = accountRepository.selectAccountByNumber(accountNumber);
         if(account == null) {
             throw new IllegalArgumentException("해당 계좌를 찾을 수 없습니다.");
